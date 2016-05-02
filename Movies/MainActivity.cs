@@ -1,18 +1,13 @@
 ﻿using Android.App;
-using Android.Content;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
-using System.Net;
-using System.Json;
-using System.Threading.Tasks;
-using Android.Graphics;
 using Movies.Utilities;
+using Android.Support.V7.App;
 
 namespace Movies
 {
     [Activity(MainLauncher = true) ]
-    public class MainActivity : Activity
+    public class MainActivity : ActionBarActivity
     {
         protected override async void OnCreate(Bundle bundle)
         {
@@ -20,6 +15,11 @@ namespace Movies
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            //set toolbar
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.Title = "Movie Explorer";
 
             //set Urls to retrieve movies
             string baseUri = "http://api.themoviedb.org/3/movie";
@@ -35,51 +35,9 @@ namespace Movies
             LinearLayout nowPlayingMovies = FindViewById<LinearLayout>(Resource.Id.nowPlayingMovies);
 
             //populate movie list
-            await populateMovieList(topRatedMovieUri, topRatedMovies);
-            await populateMovieList(popularUri, popularMovies);
-            await populateMovieList(nowPlayingUri, nowPlayingMovies);
-        }
-
-        //retrieve movies to movie list
-        private async Task<LinearLayout> populateMovieList(string url, LinearLayout movieList)
-        {
-            string imageUri = "https://image.tmdb.org/t/p/original";
-            JsonValue jsonValue = await FetchMoviesAsync.FetchMoviesAsyncCall(url);
-            var results = jsonValue["results"];
-            var i = 0;
-            foreach (JsonObject movieObject in results)
-            {
-                Android.Net.Uri androidUri = Android.Net.Uri.Parse(imageUri + movieObject["poster_path"]);
-
-                //layout parameters
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(400, 700);
-                lp.LeftMargin = 10;
-                lp.RightMargin = 10;
-
-                //define ImageView
-                ImageView imageView = new ImageView(this);
-                imageView.LayoutParameters = lp;
-                imageView.Visibility = ViewStates.Visible;
-                var imageBitmap = GetImageBitmap.GetImageBitmapFromUri(imageUri + movieObject["poster_path"]);
-                imageView.SetImageBitmap(imageBitmap);
-
-                //add click event to ImageView
-                imageView.Click += delegate
-                {
-                    var detailActivity = new Intent(this, typeof(DetailActivity));
-                    detailActivity.PutExtra("movieObject", (int)movieObject["id"]);
-                    StartActivity(detailActivity);
-                };
-
-                //add imageView to movieList
-                movieList.AddView(imageView);
-
-                //placeholder. Loading 7 movies for now
-                i++;
-                if (i > 7)
-                    break;
-            }
-            return movieList;
+            await PopulateMovie.populateMovieList(topRatedMovieUri, topRatedMovies, this);
+            await PopulateMovie.populateMovieList(popularUri, popularMovies, this);
+            await PopulateMovie.populateMovieList(nowPlayingUri, nowPlayingMovies, this);
         }
     }
 }
