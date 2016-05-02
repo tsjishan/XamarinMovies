@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="hello">Hello World, Click Me!</string>
+  <string name="app_name">Movies</string>
+  <string name="top_rated">Top Rated</string>
+  <string name="popular">Popular</string>
+  <string name="now_playing">Now Playing</string>
+  <string name="app_name_full">Movie Explorer</string>
+</resources>
