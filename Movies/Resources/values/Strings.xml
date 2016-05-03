@@ -7,4 +7,7 @@
   <string name="now_playing">Now Playing</string>
   <string name="similar">Similar Movies</string>
   <string name="app_name_full">Movie Explorer</string>
+  <string name="play_video">Play Video</string>
+  <string name="save_to_favorites">Save to Favorites</string>
+
 </resources>

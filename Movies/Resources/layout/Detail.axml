@@ -7,6 +7,87 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
     <LinearLayout
+        android:id="@+id/movieInformation"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+        <LinearLayout
+            android:id="@+id/image"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6">
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/similar"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/movieDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/similar"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
+            <RatingBar
+                android:id="@+id/movieRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:isIndicator="true" />
+            <TextView
+                android:id="@+id/movieVotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/similar"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_video" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_to_favorites" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movieInformation">
+        <TextView
+            android:id="@+id/movieIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/similar"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

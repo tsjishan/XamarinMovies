@@ -75,6 +75,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DefineImageView.cs" />
     <Compile Include="Utilities\FetchMoviesAsync.cs" />
     <Compile Include="Utilities\PopulateMovie.cs" />
   </ItemGroup>
