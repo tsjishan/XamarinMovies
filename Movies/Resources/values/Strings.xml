@@ -5,5 +5,6 @@
   <string name="top_rated">Top Rated</string>
   <string name="popular">Popular</string>
   <string name="now_playing">Now Playing</string>
+  <string name="similar">Similar Movies</string>
   <string name="app_name_full">Movie Explorer</string>
 </resources>
