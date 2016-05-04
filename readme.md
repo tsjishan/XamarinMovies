@@ -18,6 +18,3 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
-*Obviously, we will be looking for your capabilities, so even though it is a fairly simple project, please demonstrate your abilities. Niceties are pull to refresh, exception handling, unit tests, dependency injection, etc.*
-
-We would like you to finish the test by 5/4 (Wednesday). If your plans change, please let us know and we can adjust the due date. If you want to do it sooner, by all means.     We’d prefer Xamarin.Android to be used for the test as that’s the immediate need for this position.    Lastly, please do not share this test with anyone.
