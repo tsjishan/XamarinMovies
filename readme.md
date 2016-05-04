@@ -20,9 +20,9 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
+![alt tag](/Movies/Screenshots/MovieList1.PNG)
+![alt tag](/Movies/Screenshots/MovieList2.PNG)
 ![alt tag](/Movies/Screenshots/MovieDetail1.PNG)
 ![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](/Movies/Screenshots/MovieDetailDeleteFromFavorite.PNG)
 ![alt tag](/Movies/Screenshots/MovieListWithFavorites.PNG)
