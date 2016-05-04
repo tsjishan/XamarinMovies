@@ -1,5 +1,7 @@
 #Android Movie App
 
+suggested envrionment : **Android 5.1.0 - API 22 - 1080*1920**
+
 A simple mobile application for iOS or Android that hits a web service and downloads movies to display in a list along with their associated image if available. Clicking on a movie should navigate the user to a screen that displays additional details about the movie. The user should have the ability to add and remove movies from their “Favorites”. The user should be able to view their favorites. Favorite movies should persist between sessions.
 
 **The following endpoint can be used to download a list of favorite movies:**
@@ -18,6 +20,3 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
-*Obviously, we will be looking for your capabilities, so even though it is a fairly simple project, please demonstrate your abilities. Niceties are pull to refresh, exception handling, unit tests, dependency injection, etc.*
-
-We would like you to finish the test by 5/4 (Wednesday). If your plans change, please let us know and we can adjust the due date. If you want to do it sooner, by all means.     We’d prefer Xamarin.Android to be used for the test as that’s the immediate need for this position.    Lastly, please do not share this test with anyone.
