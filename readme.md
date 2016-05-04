@@ -1,6 +1,6 @@
 #Android Movie App
 
-suggested envrionment : **Android 5.1.0 - API 22 - 1080*1920**
+suggested running envrionment : **Android 5.1.0 - API 22 - 1080*1920**   Dev environment **Visual Studio 2015 with Xamarin Android**
 
 A simple mobile application for iOS or Android that hits a web service and downloads movies to display in a list along with their associated image if available. Clicking on a movie should navigate the user to a screen that displays additional details about the movie. The user should have the ability to add and remove movies from their “Favorites”. The user should be able to view their favorites. Favorite movies should persist between sessions.
 
@@ -20,3 +20,9 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail1.PNG)
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieListWithFavorites.PNG)
