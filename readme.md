@@ -20,9 +20,9 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
-[Absolute README link](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail1.PNG)
-![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieDetail2.PNG)
-![alt tag](https://github.com/tsjishan/XamarinMovies/tree/master/Movies/Screenshots/MovieListWithFavorites.PNG)
+![alt tag](/Movies/Screenshots/MovieDetail1.PNG)
+![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](/Movies/Screenshots/MovieDetail2.PNG)
+![alt tag](/Movies/Screenshots/MovieListWithFavorites.PNG)
