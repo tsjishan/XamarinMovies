@@ -10,6 +10,9 @@ using FFImageLoading.Views;
 using FFImageLoading;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Threading.Tasks;
+using SQLite;
 
 namespace Movies
 {
@@ -30,13 +33,15 @@ namespace Movies
             #endregion
 
             //get views and layouts
+            #region
             LinearLayout movieImage = FindViewById<LinearLayout>(Resource.Id.image);
             TextView movieName = FindViewById<TextView>(Resource.Id.movieName);
             TextView movieDate = FindViewById<TextView>(Resource.Id.movieDate);
             TextView movieIntro = FindViewById<TextView>(Resource.Id.movieIntro);
             RatingBar movieRating = FindViewById<RatingBar>(Resource.Id.movieRating);
             TextView movieVotes = FindViewById<TextView>(Resource.Id.movieVotes);
-
+            Button saveToFavorites = FindViewById<Button>(Resource.Id.saveToFavorites);
+            #endregion
 
             //get the movie id
             string movieId = Intent.GetStringExtra("movieId");
@@ -52,18 +57,21 @@ namespace Movies
             JObject movieObject = (JObject)JsonConvert.DeserializeObject(jsonValue.ToString());
             #endregion
 
+            #region populate the views
             //populate image
+            #region
             string imageUri = "http://image.tmdb.org/t/p/original" + movieObject["backdrop_path"];
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(350, 450);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(500, 700);
             ImageViewAsync imageView = DefineImageView.GetImageView(this, lp);
+            imageView.SetPadding(10, 10, 10, 10);
 
             ImageService
                 .LoadUrl(imageUri)
                 .FadeAnimation(true)
-                .DownSample(width: 150)
                 .Into(imageView);
 
             movieImage.AddView(imageView);
+            #endregion
 
             //populate the name text
             movieName.Text = movieObject["title"].ToString();
@@ -79,9 +87,30 @@ namespace Movies
 
             //populate the description
             movieIntro.Text = movieObject["overview"].ToString();
+            #endregion
 
             //add click event to the button
+            var docsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            var pathToDatabase = System.IO.Path.Combine(docsFolder, "db_sqlnet.db");
+            var existingMovie = await SQLiteDatabase.getDataById(movieObject["id"].ToString(), pathToDatabase);
 
+            if(existingMovie.Count == 0)
+            {
+                saveToFavorites.Click += async (object sender, EventArgs e) =>
+                {
+                    await SQLiteDatabase.insertUpdateData(new Movie { movieID = movieObject["id"].ToString(), movieImageLink = movieObject["backdrop_path"].ToString() }, pathToDatabase);
+                };
+                saveToFavorites.Text = "Save to Favorites";
+            }
+
+            if (existingMovie.Count != 0)
+            {
+                saveToFavorites.Click += async (object sender, EventArgs e) =>
+                {
+                    await SQLiteDatabase.deleteData(new Movie { movieID = movieObject["id"].ToString(), movieImageLink = movieObject["backdrop_path"].ToString() }, pathToDatabase);
+                };
+                saveToFavorites.Text = "Delete from Favorites";
+            }
             #region similarMovie
             //get the similarMovies linearlayout
             LinearLayout similarMovies = FindViewById<LinearLayout>(Resource.Id.similarMovies);

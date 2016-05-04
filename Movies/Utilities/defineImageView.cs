@@ -14,7 +14,6 @@ namespace Movies.Utilities
 
             imageView.LayoutParameters = lp;
             imageView.Visibility = ViewStates.Visible;
-            imageView.SetPadding(2, 2, 2, 2);
             imageView.SetBackgroundColor(Color.White);
             imageView.CropToPadding = true;
             imageView.SetScaleType(ImageView.ScaleType.CenterCrop);

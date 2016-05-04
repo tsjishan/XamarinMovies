@@ -3,12 +3,16 @@ using Android.Widget;
 using Android.OS;
 using Movies.Utilities;
 using Android.Support.V7.App;
+using SQLite;
+using System.Threading.Tasks;
 
 namespace Movies
 {
-    [Activity(MainLauncher = true) ]
+    [Activity(MainLauncher = true)]
     public class MainActivity : ActionBarActivity
     {
+        LinearLayout favoriteMovies;
+        string pathToDatabase;
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -23,6 +27,21 @@ namespace Movies
             SupportActionBar.Title = "Movie Explorer";
             #endregion
 
+            //get corresponding linear layouts
+            #region
+            LinearLayout topRatedMovies = FindViewById<LinearLayout>(Resource.Id.topRatedMovies);
+            LinearLayout popularMovies = FindViewById<LinearLayout>(Resource.Id.popularMovies);
+            LinearLayout nowPlayingMovies = FindViewById<LinearLayout>(Resource.Id.nowPlayingMovies);
+            favoriteMovies = FindViewById<LinearLayout>(Resource.Id.favoriteMovies);
+            #endregion
+
+            // create DB path
+            #region
+            var docsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            pathToDatabase = System.IO.Path.Combine(docsFolder, "db_sqlnet.db");
+            SQLiteDatabase.createDatabase(pathToDatabase);
+            #endregion
+
             //set Urls to retrieve movies
             #region
             string baseUri = "http://api.themoviedb.org/3/movie";
@@ -33,13 +52,6 @@ namespace Movies
             string nowPlayingUri = baseUri + "/now_playing" + api_key;
             #endregion
 
-            //get corresponding linear layouts
-            #region
-            LinearLayout topRatedMovies = FindViewById<LinearLayout>(Resource.Id.topRatedMovies);
-            LinearLayout popularMovies = FindViewById<LinearLayout>(Resource.Id.popularMovies);
-            LinearLayout nowPlayingMovies = FindViewById<LinearLayout>(Resource.Id.nowPlayingMovies);
-            #endregion
-
             //populate movie list
             #region
             await PopulateMovie.populateMovieList(topRatedMovieUri, topRatedMovies, this);
@@ -47,6 +59,13 @@ namespace Movies
             await PopulateMovie.populateMovieList(nowPlayingUri, nowPlayingMovies, this);
             #endregion
         }
+
+        protected override async void OnResume()
+        {
+            base.OnResume();
+            await PopulateMovie.populateFavoriteMoviesList(favoriteMovies, pathToDatabase, this);
+        }
+
     }
 }
 
