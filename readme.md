@@ -20,7 +20,7 @@ A simple mobile application for iOS or Android that hits a web service and downl
 - You may use 3rd party libraries
 - Provide source code
 
-##Youtube Video : 
+##Demo video : 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/B_U0BdIc6Fg/0.jpg)](https://www.youtube.com/watch?v=B_U0BdIc6Fg)
 
