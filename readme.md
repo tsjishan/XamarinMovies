@@ -22,7 +22,7 @@ A simple mobile application for iOS or Android that hits a web service and downl
 
 ##Youtube Video : 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/59sXjBOm8ho/0.jpg)](https://www.youtube.com/watch?v=59sXjBOm8ho)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/B_U0BdIc6Fg/0.jpg)](https://www.youtube.com/watch?v=B_U0BdIc6Fg)
 
 
 ##Screenshots:
