@@ -12,13 +12,6 @@ A simple mobile application for iOS or Android that hits a web service and downl
 
 *http://docs.themoviedb.apiary.io/#reference/account/accountidlists*
 
-**Requirements**
-- The application must be written in C# using Xamarin
-- You cannot use Xamarin.Forms to write the application unless deemed acceptable by Cie.
-- The application must be written using Xamarin.iOS or Xamarin.Android unless otherwise directed by Cie.
-- The application should reuse as much code as possible between the two platforms
-- You may use 3rd party libraries
-- Provide source code
 
 ##Demo video : 
 
